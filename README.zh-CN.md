@@ -95,6 +95,16 @@
 
 CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#text-spacing-property) 和 Microsoft 的 [`-ms-text-autospace`](https://msdn.microsoft.com/library/ms531164(v=vs.85).aspx) 可以实现自动为中英文之间增加空白。不过目前并未普及，另外在其他应用场景，例如 macOS、iOS、Windows 等用户介面目前并不存在这个特性，所以请继续保持随手加空格的习惯。
 
+## 空行
+
+### 不要有多余的空行
+
+在 Markdown 文本中，想要做到渲染后 **真换行** 通常是使用两个空格加一个回车换行符（Unix 下只有回车 CR），或者粗暴地空一行，但是 **请不要连续空两行及以上**。
+
+### 文件末尾空一行
+
+强烈建议文件末尾空一行，大多数格式检查工具都会检查文件末尾的空行。文件末尾增加空行的可能原因是为了方便进行文件拼接处理。
+
 ## 标点符号
 
 ### 不重复使用标点符号
@@ -227,6 +237,60 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 > 
 > 访问我们网站的最新动态，请[点击这里](#)进行订阅！
 
+### 加粗、斜体、高亮文本前后加空格
+
+> 遇到全角符号时不加空格。
+
+建议用法：
+
+> 修复了一个 **内存泄露** 问题，该问题由 *someone* 在 `版本 v0.1.1` 中引入。
+>
+> **测试文本**，这是测试。
+
+不建议用法：
+
+> 修复了一个**内存泄露**问题，该问题由*someone*在`版本 v0.1.1`中引入。
+>
+> **测试文本** ，这是测试。
+
+### 缩进
+
+建议使用 4 个空格进行文本缩进，尤其是遇到有序列表或者无序列表的时候。另外，在使用无序列表或者有序列表的时候，建议在上下级之间空一行，同级之间可以不空行。
+
+示例：
+
+- 一级
+
+    - 二级
+
+- 一级
+
+    - 二级
+    - 二级
+
+- 一级
+
+    - 二级
+
+        - 三级
+
+    - 二级
+
+        - 三级
+        - 三级
+
+### `/` 的使用
+
+建议 `/` 字符前后留空格，充当路径描述符的时候除外。
+
+### 严格使用 [GFM](https://github.github.com/gfm/) 标准
+
+由于目前还没有一个权威机构对 Markdown 的语法进行规范，各应用厂商制作时遵循的 Markdown 语法也是不尽相同的。其中比较受到认可的是 [GFM](https://github.github.com/gfm/) 标准，它是由著名代码托管网站 [GitHub](https://github.com/) 所制定的。
+
+建议通用的对外用的 Markdown 文件严格使用 [GFM](https://github.github.com/gfm/) 标准，这样做的好处是在 [GitHub](https://github.com/) 上完美兼容。
+
+如果您 Markdown 文件是针对特定解析器的（比如用于 Hexo 博客），那可以遵循目标解析器支持的格式进行编写。
+
 ### 简体中文使用直角引号
 
 用法：
@@ -252,6 +316,7 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 | [hjiang/scripts/add-space-between-latin-and-cjk](https://github.com/hjiang/scripts/blob/master/add-space-between-latin-and-cjk) | Python          |
 | [hustcc/hint](https://github.com/hustcc/hint)                                                                                   | Python          |
 | [studygolang/autocorrect](https://github.com/studygolang/autocorrect)                                                           | Go              |
+| [textlint/textlint](https://github.com/textlint/textlint)                                                   | JavaScript      |
 
 ## 谁在这样做？
 
