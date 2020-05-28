@@ -19,7 +19,28 @@
 
 - TOC {:toc}
 
+
+## 语法规范
+
+**推荐使用 [GitHub GFM](https://github.github.com/gfm/) 规范！** 其他规范不做介绍。
+
+## 标题
+
+[GitHub GFM](https://github.github.com/gfm/) 规范支持 [**ATX 标题**](https://github.github.com/gfm/#atx-headings) 和 [**Setext 标题**](https://github.github.com/gfm/#setext-heading) 规范，**推荐使用 [ATX 标题](https://github.github.com/gfm/#atx-headings) 规范**，最大支持 6 级标题。
+
+[**ATX 标题**](https://github.github.com/gfm/#atx-headings) 标题规范示例：
+
+```
+# 一级标题
+
+## 二级标题
+
+### 三级标题
+```
+
 ## 空格
+
+> **重中之重**，希望严格对待。
 
 「有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。
 
@@ -104,6 +125,10 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 ### 文件末尾空一行
 
 强烈建议文件末尾空一行，大多数格式检查工具都会检查文件末尾的空行。文件末尾增加空行的可能原因是为了方便进行文件拼接处理。
+
+### 标题前后各空一行
+
+这样做的目的是标题行清晰明了。
 
 ## 标点符号
 
@@ -221,7 +246,7 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 
 ## 争议
 
-以下用法略带有个人色彩，即：无论是否遵循下述规则，从语法的角度来讲都是**正确**的。
+以下用法略带有个人色彩，即：无论是否遵循下述规则，从语法的角度来讲都是 **正确** 的。
 
 ### 链接之间增加空格
 
@@ -239,7 +264,7 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 
 ### 加粗、斜体、高亮文本前后加空格
 
-> 遇到全角符号时不加空格。
+建议在 **加粗**、**斜体**、**高亮文本** 前后加空格，否则某种情况会出现格式解析失败。
 
 建议用法：
 
@@ -253,7 +278,11 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 >
 > **测试文本** ，这是测试。
 
-### 缩进
+解析失败的情况：
+
+> 这是一个解析失败的情况，当引用了一个函数**void main(void)**的情况下，如果没有在加粗文本前后增加空格，会导致格式解析失败。**这种情况在 GitHub 中存在**。
+
+### 列表缩进
 
 建议使用 4 个空格进行文本缩进，尤其是遇到有序列表或者无序列表的时候。另外，在使用无序列表或者有序列表的时候，建议在上下级之间空一行，同级之间可以不空行。
 
@@ -282,14 +311,6 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 ### `/` 的使用
 
 建议 `/` 字符前后留空格，充当路径描述符的时候除外。
-
-### 严格使用 [GFM](https://github.github.com/gfm/) 标准
-
-由于目前还没有一个权威机构对 Markdown 的语法进行规范，各应用厂商制作时遵循的 Markdown 语法也是不尽相同的。其中比较受到认可的是 [GFM](https://github.github.com/gfm/) 标准，它是由著名代码托管网站 [GitHub](https://github.com/) 所制定的。
-
-建议通用的对外用的 Markdown 文件严格使用 [GFM](https://github.github.com/gfm/) 标准，这样做的好处是在 [GitHub](https://github.com/) 上完美兼容。
-
-如果您 Markdown 文件是针对特定解析器的（比如用于 Hexo 博客），那可以遵循目标解析器支持的格式进行编写。
 
 ### 简体中文使用直角引号
 
